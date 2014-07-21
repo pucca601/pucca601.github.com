@@ -22,6 +22,52 @@ layout: home
             </li>
         {% endfor %}
         </ul>
+		
+		<div id="post-pagination" class="pagination">
+		{% if paginator.previous_page %}
+			<span class="previous">
+			{% if paginator.previous_page == 1 %}
+				<a href="/">Previous</a>
+			{% else %}
+				<a href="{{ paginator.previous_page_path }}">Previous</a>
+			{% endif %}
+			</span>
+		{% else %}
+			<span class="previous disabled">
+				<span>Previous</span>
+			</span>
+		{% endif %}
+
+			<ul class="pages">
+				<li>
+				{% if paginator.page == 1 %}
+					<span class="current-page">1</span>
+				{% else %}
+					<a href="/">1</a>
+				{% endif %}
+				</li>
+
+				{% for count in (2..paginator.total_pages) %}
+					<li>
+					{% if count == paginator.page %}
+						<span class="current-page">{{ count }}</span>
+					{% else %}
+						<a href="/page{{ count }}">{{ count }}</a>
+					{% endif %}
+					</li>
+				{% endfor %}
+			</ul>
+
+		{% if paginator.next_page %}
+			<span class="next">
+				<a href="{{ paginator.next_page_path }}">Next</a>
+			</span>
+		{% else %}
+			<span class="next disabled">
+				<span>Next</span>
+			</span>
+		{% endif %}
+		</div>
     </div>
 
     <div class="aside"></div>
