@@ -42,7 +42,7 @@ layout: home
 				{% if paginator.page == 1 %}
 					<span class="current-page">1</span>
 				{% else %}
-					<a href="/">1</a>
+					<a href="/project">1</a>
 				{% endif %}
 				</li>
 
