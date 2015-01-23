@@ -7,7 +7,7 @@ layout: nil
   <channel>
      <title>{{ site.title }}</title>
      <link>{{ site.url }}</link>
-     <description>pucca601's blog—关注互联网!</description>
+     <description>pucca601's blog－hi</description>
      <script xmlns="http://www.w3.org/1999/xhtml" src="./js/rss.js"></script>
      {% for post in site.posts limit:15 %}<item>
        <title>{{ post.title }}</title>
